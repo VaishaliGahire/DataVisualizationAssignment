@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    // Retrieve data from the Google Sheet (assumes you have fetched the data using an API)
+
+    const data = {
+      labels: ['Week 1', 'Week 2', 'Week 3'], // Add new labels for each week
+      datasets: [
+        {
+          label: 'Neha',
+          data: [6, 7, 9], // Add Neha's data for each week
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+        },
+        {
+          label: 'Amit',
+          data: [8, 6, 9], // Add Amit's data for each week
+          backgroundColor: 'rgba(192, 75, 192, 0.2)',
+          borderColor: 'rgba(192, 75, 192, 1)',
+          borderWidth: 1,
+        },
+        {
+          label: 'Sachin',
+          data: [7, 9, 9], // Add Sachin's data for each week
+          backgroundColor: 'rgba(192, 192, 75, 0.2)',
+          borderColor: 'rgba(192, 192, 75, 1)',
+          borderWidth: 1,
+        }
+      ]
+    };
+
+    // Create the chart using Chart.js
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: {
+        // Add any additional options or configurations here
+      }
+    });
+  </script>
+</body>
+</html>

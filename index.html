@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    // Retrieve data from the Google Sheet (assumes you have fetched the data using an API)
+
+    const data = {
+      labels: ['Label 1', 'Label 2', 'Label 3'], // Replace with your own labels
+      datasets: [
+        {
+          label: 'Data',
+          data: [10, 20, 30], // Replace with your own data values
+          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Customize the chart's appearance
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+        }
+      ]
+    };
+
+    // Create the chart using Chart.js
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar', // Replace with the desired chart type (e.g., 'line', 'pie')
+      data: data,
+      options: {
+        // Add any additional options or configurations here
+      }
+    });
+  </script>
+</body>
+</html>
